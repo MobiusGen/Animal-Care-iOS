@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Animal Care</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.MobiusGen.animal_care</string>
+	<string>com.companyname.animal_care</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2746D497-0306-41C3-A8AD-F3ADD3527F23}</ProjectGuid>
+    <ProjectGuid>{5D171E4F-FD84-415E-9C4A-429B76B694C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>AnimalCare.UITests</RootNamespace>
     <AssemblyName>AnimalCare.UITests</AssemblyName>
@@ -37,17 +37,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tests.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
     <ProjectReference Include="..\AnimalCare\AnimalCare.csproj">
-      <Project>{23B6E3EB-05E2-4C48-9838-D4B582BE0B7F}</Project>
+      <Project>{80E391D5-2EFB-4E0D-9629-A0234009A413}</Project>
       <Name>AnimalCare</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Tests.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

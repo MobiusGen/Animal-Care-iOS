@@ -20,11 +20,10 @@ namespace AnimalCare.UITests
 		}
 
 		[Test]
-		public void SwipeLeftOpensNextPage ()
+		public void ViewIsDisplayed ()
 		{
-			app.SwipeLeft ();
-			AppResult[] results = app.WaitForElement (c => c.Marked ("February"));
-			app.Screenshot ("Next page is opened.");
+			AppResult[] results = app.WaitForElement (c => c.Child ("UIView"));
+			app.Screenshot ("First screen.");
 
 			Assert.IsTrue (results.Any ());
 		}

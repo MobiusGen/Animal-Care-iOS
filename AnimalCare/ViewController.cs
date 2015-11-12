@@ -4,14 +4,9 @@ using UIKit;
 
 namespace AnimalCare
 {
-	public partial class DataViewController : UIViewController
+	public partial class ViewController : UIViewController
 	{
-		public string DataObject {
-			get;
-			set;
-		}
-
-		public DataViewController (IntPtr handle) : base (handle)
+		public ViewController (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -25,12 +20,6 @@ namespace AnimalCare
 		{
 			base.DidReceiveMemoryWarning ();
 			// Release any cached data, images, etc that aren't in use.
-		}
-
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
-			dataLabel.Text = DataObject;
 		}
 	}
 }
