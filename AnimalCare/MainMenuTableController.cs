@@ -14,11 +14,15 @@ namespace AnimalCare {
 		NSString CellIdentifier;
 
 		public MainMenuTableController (IntPtr handle) : base (handle) {
+		}// public MainMenuTableController
+
+		public override void ViewDidLoad() {
+			base.ViewDidLoad ();
 			menuOptions = new string[]{ "Pets", "Vets", "Calendar", "Gallery", "Settings" };
 			CellIdentifier = new NSString ("TableCell");
-			//TableView.RegisterClassForCellReuse (typeof(UITableViewCell), CellIdentifier);
-			TableView.Source = new MainMenuTableSource(this);
-		}// public MainMenuTableController
+			TableView.RegisterClassForCellReuse (typeof(UITableViewCell), CellIdentifier);
+			TableView.Source = new MainMenuTableSource (this);
+		}// ViewDidLoad
 
 		// The table source
 		class MainMenuTableSource : UITableViewSource {
@@ -30,8 +34,7 @@ namespace AnimalCare {
 			}
 
 			public override nint RowsInSection (UITableView tableView, nint section) {
-				return 3;
-				//return controller.menuOptions.Length;
+				return controller.menuOptions.Length;
 			}// RowsInSection
 
 			public override nint NumberOfSections(UITableView tableView) {
@@ -39,11 +42,7 @@ namespace AnimalCare {
 			}// NumberOfSections
 
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath) {
-				//UITableViewCell cell = tableView.DequeueReusableCell(MainMenuTableController.CellIdentifier);
-				UITableViewCell newCell = new UITableViewCell(UITableViewCellStyle.Default, "stuff");
-				newCell.TextLabel.Text = "Hello!";
-				return newCell;
-				UITableViewCell cell = null;
+				UITableViewCell cell = tableView.DequeueReusableCell(controller.CellIdentifier);
 				int row = indexPath.Row;
 				if (cell == null) {
 					cell = new UITableViewCell (UITableViewCellStyle.Default, controller.CellIdentifier);
@@ -52,6 +51,19 @@ namespace AnimalCare {
 				return cell;
 			}// GetCell
 
+			public override void RowSelected (UITableView tableView, NSIndexPath indexPath) {
+				controller.TableView.DeselectRow(indexPath, true);
+				//UIAlertController okAlerController = UIAlertController.Create ("Row Selected", controller.menuOptions [indexPath.Row], UIAlertControllerStyle.Alert);
+				//okAlerController.AddAction (UIAlertAction.Create ("OK", UIAlertActionStyle.Default, null));
+				//controller.PresentViewController (okAlerController, true, null);
+							if (indexPath.Row == 0) { // "PETS"
+								// Launches a new instance of PetMenuController
+								PetMenuController petMenu = controller.Storyboard.InstantiateViewController("PetMenu") as PetMenuController;
+								controller.NavigationController.PushViewController (petMenu, true);
+							}
+			}
+
 		}// class MainMenuTableSource
+
 	}// class MainMenuTableController
 }// namespace AnimalCare
