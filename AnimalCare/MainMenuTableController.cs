@@ -56,11 +56,19 @@ namespace AnimalCare {
 				//UIAlertController okAlerController = UIAlertController.Create ("Row Selected", controller.menuOptions [indexPath.Row], UIAlertControllerStyle.Alert);
 				//okAlerController.AddAction (UIAlertAction.Create ("OK", UIAlertActionStyle.Default, null));
 				//controller.PresentViewController (okAlerController, true, null);
-							if (indexPath.Row == 0) { // "PETS"
-								// Launches a new instance of PetMenuController
-								PetMenuController petMenu = controller.Storyboard.InstantiateViewController("PetMenu") as PetMenuController;
-								controller.NavigationController.PushViewController (petMenu, true);
-							}
+				if (indexPath.Row == 0) { // "PETS"
+					// Launches a new instance of PetMenuController
+					PetMenuController petMenu = controller.Storyboard.InstantiateViewController ("PetMenu") as PetMenuController;
+					controller.NavigationController.PushViewController (petMenu, true);
+				} else if (indexPath.Row == 1) { //"VETS"
+					
+				} else if (indexPath.Row == 2) { //"CALENDAR"
+
+				} else if (indexPath.Row == 3) { //"GALLERY"
+
+				} else if (indexPath.Row == 4) { //"SETTINGS"
+
+				}
 			}
 
 		}// class MainMenuTableSource
