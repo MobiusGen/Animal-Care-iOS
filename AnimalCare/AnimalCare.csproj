@@ -96,6 +96,10 @@
     <Compile Include="PetMenuController.designer.cs">
       <DependentUpon>PetMenuController.cs</DependentUpon>
     </Compile>
+    <Compile Include="VetMenuController.cs" />
+    <Compile Include="VetMenuController.designer.cs">
+      <DependentUpon>VetMenuController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
