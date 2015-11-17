@@ -69,7 +69,8 @@ namespace AnimalCare {
 				} else if (indexPath.Row == 3) { //"GALLERY"
 
 				} else if (indexPath.Row == 4) { //"SETTINGS"
-
+					SettingsController settingsMenu = controller.Storyboard.InstantiateViewController("SettingsController") as SettingsController;
+					controller.NavigationController.PushViewController (settingsMenu, true);
 				}
 			}
 
