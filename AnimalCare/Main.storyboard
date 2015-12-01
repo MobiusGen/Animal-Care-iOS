@@ -44,7 +44,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="282" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="893"/>
+            <point key="canvasLocation" x="1686" y="54"/>
         </scene>
         <scene sceneID="366">
             <objects>
@@ -150,7 +150,149 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="442" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="886"/>
+            <point key="canvasLocation" x="877" y="1650"/>
+        </scene>
+        <scene sceneID="463">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="464" sceneMemberID="viewController" customClass="PetTabController" storyboardIdentifier="PetMainPage">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="469">
+                        <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="466" kind="relationship" relationship="viewControllers" id="465"/>
+                        <segue destination="468" kind="relationship" relationship="viewControllers" id="467"/>
+                        <segue id="521" destination="497" kind="relationship" relationship="viewControllers"/>
+                        <segue id="541" destination="526" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="470" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423" y="52"/>
+        </scene>
+        <scene sceneID="471">
+            <objects>
+                <viewController id="466" sceneMemberID="viewController" customClass="PetProfilePage">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="459"/>
+                        <viewControllerLayoutGuide type="bottom" id="460"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="472">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="543" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="27" y="44" width="280" height="242"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Breed:" lineBreakMode="tailTruncation" minimumFontSize="10" id="544" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="326" y="44" width="260" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Age:" lineBreakMode="tailTruncation" minimumFontSize="10" id="546" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="328" y="80" width="256" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weight:" lineBreakMode="tailTruncation" minimumFontSize="10" id="547" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="324" y="155" width="259" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Birthday:" lineBreakMode="tailTruncation" minimumFontSize="10" id="548" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="324" y="192" width="260" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="543" firstAttribute="top" secondItem="459" secondAttribute="bottom" constant="24" id="549"/>
+                            <constraint firstItem="543" firstAttribute="leading" secondItem="472" secondAttribute="leading" constant="27" id="550"/>
+                            <constraint firstItem="472" firstAttribute="centerY" secondItem="543" secondAttribute="centerY" constant="135" id="551"/>
+                            <constraint firstItem="472" firstAttribute="centerX" secondItem="543" secondAttribute="centerX" constant="133" id="552"/>
+                            <constraint firstItem="472" firstAttribute="centerX" secondItem="543" secondAttribute="centerX" constant="133" id="553"/>
+                            <constraint firstItem="544" firstAttribute="top" secondItem="459" secondAttribute="bottom" constant="19" id="555"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="473"/>
+                    <connections>
+                        <outlet property="breedLabel" destination="544" id="name-outlet-544"/>
+                        <outlet property="profilePicImageView" destination="543" id="name-outlet-543"/>
+                        <outlet property="ageLabel" destination="546" id="name-outlet-546"/>
+                        <outlet property="weightLabel" destination="547" id="name-outlet-547"/>
+                        <outlet property="birthdayLabel" destination="548" id="name-outlet-548"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="474" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3198" y="-355"/>
+        </scene>
+        <scene sceneID="475">
+            <objects>
+                <viewController id="468" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="461"/>
+                        <viewControllerLayoutGuide type="bottom" id="462"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="476">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Medicine" id="477"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="478" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3949" y="-353"/>
+        </scene>
+        <scene sceneID="496">
+            <objects>
+                <viewController id="497" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="494"/>
+                        <viewControllerLayoutGuide type="bottom" id="495"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="498">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Medical Info" id="520"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="499" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3945" y="452"/>
+        </scene>
+        <scene sceneID="525">
+            <objects>
+                <viewController id="526" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="523"/>
+                        <viewControllerLayoutGuide type="bottom" id="524"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="527">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pics" id="540"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="528" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3202" y="453"/>
         </scene>
     </scenes>
 </document>

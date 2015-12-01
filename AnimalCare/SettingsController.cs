@@ -28,6 +28,8 @@ namespace AnimalCare
 			protected UIPickerView dayPicker;
 			protected bool timePickerIsShowing, dayPickerIsShowing;
 			protected NSDateFormatter dateFormatter;
+			protected int dayPickerDay;
+			protected string dayPickerUnit;
 
 			public SettingsTableSource (UITableViewController controller, string cellID) {
 				this.cellID = cellID;
@@ -44,11 +46,13 @@ namespace AnimalCare
 				timePicker.Date = NSDate.Now;
 				timePicker.Hidden = true;
 				this.timePickerIsShowing = false;
+				this.dayPickerDay = 1;
+				this.dayPickerUnit = "Days";
 
 				// Set up the UIPickerView
 				this.dayPicker = new UIPickerView();
 				this.dayPicker.DataSource = new DayPickerSource();
-				this.dayPicker.Delegate = new DayPickerDelegate();
+				this.dayPicker.Delegate = new DayPickerDelegate(this);
 				this.dayPicker.Hidden = true;
 				this.dayPickerIsShowing = false;
 			}// SettingsTableSource constructor
@@ -69,7 +73,7 @@ namespace AnimalCare
 
 				// Reload the section
 				NSIndexSet sections = new NSIndexSet (PICKER_SECTION);
-				tableView.ReloadSections (sections, UITableViewRowAnimation.Automatic);
+				tableView.ReloadSections (sections, UITableViewRowAnimation.Fade);
 			}// toggleTimePickerCell
 
 			/// <summary>
@@ -89,7 +93,7 @@ namespace AnimalCare
 
 				// Reload the section
 				NSIndexSet sections = new NSIndexSet (PICKER_SECTION);
-				tableView.ReloadSections (sections, UITableViewRowAnimation.Automatic);
+				tableView.ReloadSections (sections, UITableViewRowAnimation.Fade);
 			}// toggleDayPickerCell
 
 			public override nint RowsInSection (UITableView tableView, nint section) {
@@ -200,7 +204,7 @@ namespace AnimalCare
 						cell.Accessory = UITableViewCellAccessory.None;
 					} else if (row == 1) {
 						cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
-						cell.TextLabel.Text = "Remind 5 days before refills";
+						cell.TextLabel.Text = "Remind " + dayPickerDay + " " + dayPickerUnit + " before refills";
 						cell.TextLabel.Hidden = false;
 						cell.AccessoryView = null;
 					} else if (row == 2) { // 2 = DAY_PICKER_ROW
@@ -271,9 +275,10 @@ namespace AnimalCare
 			}// DayPickerSource class
 
 			public class DayPickerDelegate : UIPickerViewDelegate {
-				
-				public DayPickerDelegate () {
-					
+				private SettingsTableSource controller;
+
+				public DayPickerDelegate (SettingsTableSource controller) {
+					this.controller = controller;
 				}// DayPickerDelegate constructor
 
 //				public override nfloat GetComponentWidth (UIPickerView pickerView, nint component) {
@@ -307,9 +312,14 @@ namespace AnimalCare
 //					throw new System.NotImplementedException ();
 //				}// GetView
 //
-//				public override void Selected (UIPickerView pickerView, nint row, nint component) {
-//					throw new System.NotImplementedException ();
-//				}// Selected
+				public override void Selected (UIPickerView pickerView, nint row, nint component) {
+					if (component == 0) {
+						controller.dayPickerDay = int.Parse (this.GetTitle (pickerView, row, component));
+					} else if (component == 1) {
+						controller.dayPickerUnit = this.GetTitle (pickerView, row, component);
+					}
+					controller.controller.TableView.ReloadSections (new NSIndexSet(PICKER_SECTION), UITableViewRowAnimation.None);
+				}// Selected
 
 			}// DayPickerDelegate class
 

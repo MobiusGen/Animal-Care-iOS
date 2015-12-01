@@ -12,6 +12,7 @@ namespace AnimalCare {
 
 		string[] menuOptions;
 		NSString CellIdentifier;
+		Pet[] pets;
 
 		public MainMenuTableController (IntPtr handle) : base (handle) {
 		}// public MainMenuTableController
@@ -19,6 +20,10 @@ namespace AnimalCare {
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
 			menuOptions = new string[]{ "Pets", "Vets", "Calendar", "Gallery", "Settings" };
+			pets = new Pet[3];
+			pets [0] = new Pet ("Cookie");
+			pets [1] = new Pet ("Spot");
+			pets [2] = new Pet ("Fluffy");
 			CellIdentifier = new NSString ("TableCell");
 			TableView.RegisterClassForCellReuse (typeof(UITableViewCell), CellIdentifier);
 			TableView.Source = new MainMenuTableSource (this);

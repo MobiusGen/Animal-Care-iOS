@@ -8,21 +8,30 @@ namespace AnimalCare
 	partial class PetMenuController : UITableViewController
 	{
 		protected string cellIdentifier = "PetMenuCell";
+		public Pet[] pets;
 
 		public PetMenuController (IntPtr handle) : base (handle) {
 		}// PetMenuController constructor
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
-			string[] petMenu = new string[] { "Cookie", "Spot", "Fluffy" };
-			this.TableView.Source = new PetMenuTableSource (petMenu, cellIdentifier);
+			string[] petMenu;
+			if (pets.Length == 0) {
+				petMenu = new string[0];
+			} else {
+				petMenu = new string[pets.Length];
+
+			}
+			this.TableView.Source = new PetMenuTableSource (this, petMenu, cellIdentifier);
 		}// ViewDidLoad
 
 		public class PetMenuTableSource : UITableViewSource {
-			protected string[] menuItems;
-			protected string cellID;
+			private PetMenuController controller;
+			private string[] menuItems;
+			private string cellID;
 
-			public PetMenuTableSource (string[] items, string cellID) {
+			public PetMenuTableSource (PetMenuController controller, string[] items, string cellID) {
+				this.controller = controller;
 				menuItems = items;
 				this.cellID = cellID;
 			}// PetMenuTableSource constructor
@@ -42,6 +51,13 @@ namespace AnimalCare
 				cell.TextLabel.Text = menuItems[indexPath.Row];
 				return cell;
 			}// GetCell
+
+			public override void RowSelected (UITableView tableView, NSIndexPath indexPath) {
+				string name = GetCell (tableView, indexPath).TextLabel.Text;
+				PetTabController petController = controller.Storyboard.InstantiateViewController ("PetMainPage") as PetTabController;
+				petController.name = name;
+				controller.NavigationController.PushViewController (petController, true);
+			}// RowSelected
 
 		}// class PetMenuTableSource
 
