@@ -15,13 +15,13 @@ namespace AnimalCare
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
-			string[] petMenu;
-			if (pets.Length == 0) {
-				petMenu = new string[0];
-			} else {
-				petMenu = new string[pets.Length];
-
-			}
+			string[] petMenu = new string[] { "Fluffy", "Spot", "Mr. Cuddles" };
+//			if (pets.Length == 0) {
+//				petMenu = new string[0];
+//			} else {
+//				petMenu = new string[pets.Length];
+//
+//			}
 			this.TableView.Source = new PetMenuTableSource (this, petMenu, cellIdentifier);
 		}// ViewDidLoad
 
