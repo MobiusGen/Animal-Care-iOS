@@ -24,8 +24,6 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
-    <MtouchI18n>
-    </MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -59,7 +57,7 @@
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: lewis_52_ravens@yahoo.com (3D2VT4Q257)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <IpaPackageName>
     </IpaPackageName>
@@ -72,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Placeholder.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\Placeholder.imageset\default-placeholder.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />

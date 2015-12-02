@@ -64,6 +64,7 @@ namespace AnimalCare {
 				if (indexPath.Row == 0) { // "PETS"
 					// Launches a new instance of PetMenuController
 					PetMenuController petMenu = controller.Storyboard.InstantiateViewController ("PetMenu") as PetMenuController;
+					petMenu.pets = controller.pets;
 					controller.NavigationController.PushViewController (petMenu, true);
 				} else if (indexPath.Row == 1) { //"VETS"
 					// Launches a new instance of VetMenuController

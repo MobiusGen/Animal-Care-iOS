@@ -11,17 +11,20 @@ namespace AnimalCare
 		public Pet[] pets;
 
 		public PetMenuController (IntPtr handle) : base (handle) {
+			pets = new Pet[0];
 		}// PetMenuController constructor
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
-			string[] petMenu = new string[] { "Fluffy", "Spot", "Mr. Cuddles" };
-//			if (pets.Length == 0) {
-//				petMenu = new string[0];
-//			} else {
-//				petMenu = new string[pets.Length];
-//
-//			}
+			string[] petMenu;	
+			if (pets.Length == 0) {
+				petMenu = new string[0];
+			} else {
+				petMenu = new string[pets.Length];
+				for (int i = 0; i < pets.Length; i++) {
+					petMenu [i] = pets [i].name;
+				}
+			}
 			this.TableView.Source = new PetMenuTableSource (this, petMenu, cellIdentifier);
 		}// ViewDidLoad
 

@@ -11,23 +11,23 @@ namespace AnimalCare {
 			private string freqPeriod {get; set; }
 		}
 
-		private string name { get; set; }
-		private UIImage profilePicture { get; set; }
-		private string breed { get; set; }
-		private NSDate birthday { get; set; }
-		private string bodyColor { get; set; }
-		private string eyeColor { get; set; }
-		private double height { get; set; } // In cm
-		private double length { get; set; } // In cm
-		private string[] identifyingMarks { get; set; }
-		private string idBrand { get; set; }
-		private string idNumber { get; set; }
-		private string notes { get; set; }
-		private string[] allergies { get; set; }
-		private string[] medicalConditions { get; set; }
-		private string medicalOtherInfo { get; set; }
-		private string[] vetNames { get; set; }
-		private Medication[] medications { get; set; }
+		public string name { get; set; }
+		public UIImage profilePicture { get; set; }
+		public string breed { get; set; }
+		public NSDate birthday { get; set; }
+		public string bodyColor { get; set; }
+		public string eyeColor { get; set; }
+		public double height { get; set; } // In cm
+		public double length { get; set; } // In cm
+		public string[] identifyingMarks { get; set; }
+		public string idBrand { get; set; }
+		public string idNumber { get; set; }
+		public string notes { get; set; }
+		public string[] allergies { get; set; }
+		public string[] medicalConditions { get; set; }
+		public string medicalOtherInfo { get; set; }
+		public string[] vetNames { get; set; }
+		public Medication[] medications { get; set; }
 
 		public Pet (string name, UIImage profilePicture = null, string breed = "",
 			NSDate birthday = null, string bodyColor = "", string eyeColor = "",
