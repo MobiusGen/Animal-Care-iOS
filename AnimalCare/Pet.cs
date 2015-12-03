@@ -15,6 +15,7 @@ namespace AnimalCare {
 		public UIImage profilePicture { get; set; }
 		public string breed { get; set; }
 		public NSDate birthday { get; set; }
+		public double weight { get; set; }
 		public string bodyColor { get; set; }
 		public string eyeColor { get; set; }
 		public double height { get; set; } // In cm
@@ -28,9 +29,17 @@ namespace AnimalCare {
 		public string medicalOtherInfo { get; set; }
 		public string[] vetNames { get; set; }
 		public Medication[] medications { get; set; }
+		public int age { get {
+				if (birthday == null)
+					return -1;
+				NSCalendar gregorian = NSCalendar.CurrentCalendar;
+				var unitFlags = NSCalendarUnit.Year;
+				var comparison = gregorian.Components (unitFlags, birthday, NSDate.Now, NSCalendarOptions.None);
+				return (int)comparison.Year;
+			}}
 
 		public Pet (string name, UIImage profilePicture = null, string breed = "",
-			NSDate birthday = null, string bodyColor = "", string eyeColor = "",
+			NSDate birthday = null, double weight = -1, string bodyColor = "", string eyeColor = "",
 			double height = -1.0, double length = -1.0, string[] identifyingMarks = null,
 			string idBrand = "", string idNumber = "", string notes = "",
 			string[] allergies = null, string[] medicalConditions = null, string medicalOtherInfo = null,
@@ -40,6 +49,7 @@ namespace AnimalCare {
 			this.profilePicture = profilePicture;
 			this.breed = breed;
 			this.birthday = birthday;
+			this.weight = weight;
 			this.bodyColor = bodyColor;
 			this.eyeColor = eyeColor;
 			this.height = height;
@@ -54,6 +64,16 @@ namespace AnimalCare {
 			this.vetNames = vetNames;
 			this.medications = medications;
 		}// Pet constructor
+
+		public override bool Equals (object obj) {
+			Pet comparePet = obj as Pet;
+			return this.name.Equals (comparePet.name);
+		}// Equals
+
+		public override int GetHashCode() {
+			return this.name.GetHashCode ();
+		}
+
 	}// Pet class
 
 	public class Medication {

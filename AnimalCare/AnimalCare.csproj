@@ -72,6 +72,8 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Placeholder.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\Placeholder.imageset\default-placeholder.png" />
+    <ImageAsset Include="Resources\Images.xcassets\mrCuddles.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\mrCuddles.imageset\mrCuddles.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -113,6 +115,12 @@
     <Compile Include="PetProfilePage.designer.cs">
       <DependentUpon>PetProfilePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vet_Database.cs" />
+    <Compile Include="VetViewController.cs" />
+    <Compile Include="VetViewController.designer.cs">
+      <DependentUpon>VetViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pets_Database.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

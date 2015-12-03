@@ -12,7 +12,8 @@ namespace AnimalCare {
 
 		string[] menuOptions;
 		NSString CellIdentifier;
-		Pet[] pets;
+		Pets_Database pets;
+		Vet_Database vets;
 
 		public MainMenuTableController (IntPtr handle) : base (handle) {
 		}// public MainMenuTableController
@@ -20,10 +21,18 @@ namespace AnimalCare {
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
 			menuOptions = new string[]{ "Pets", "Vets", "Calendar", "Gallery", "Settings" };
-			pets = new Pet[3];
-			pets [0] = new Pet ("Cookie");
-			pets [1] = new Pet ("Spot");
-			pets [2] = new Pet ("Fluffy");
+			pets = new Pets_Database ();
+			pets.addNewPet (new Pet ("Mr. Cuddles", profilePicture: UIImage.FromBundle ("mrCuddles"), breed: "Bulldog",
+				birthday: NSDate.FromTimeIntervalSinceNow (-162795200), weight: 25, bodyColor: "Brown",
+				eyeColor: "Black", height: 60, length: 85, idBrand: "Dog Tagz inc", idNumber: "12345",
+				notes: "Pretty cool I guess.", allergies: new string[] { "Peanut butter", "Dogs", "Cats", "Humans" },
+				medicalConditions: new string[] { "Acute adorableness" }, vetNames: new string[] { "Dr. Strangelove" }));
+			pets.addNewPet (new Pet ("Spot"));
+			pets.addNewPet (new Pet ("Fluffy"));
+			vets = new Vet_Database ();
+			vets.addNewVet (new Vet("Dr. Strangelove", "5555555555", "07", "1231234567",
+				"1801 Crazy Ln\nArlington, TX, 22202", "A bit odd. Tends to ramble."));
+			vets.addNewVet (new Vet("Dr. Bob"));
 			CellIdentifier = new NSString ("TableCell");
 			TableView.RegisterClassForCellReuse (typeof(UITableViewCell), CellIdentifier);
 			TableView.Source = new MainMenuTableSource (this);
@@ -65,10 +74,12 @@ namespace AnimalCare {
 					// Launches a new instance of PetMenuController
 					PetMenuController petMenu = controller.Storyboard.InstantiateViewController ("PetMenu") as PetMenuController;
 					petMenu.pets = controller.pets;
+					petMenu.vets = controller.vets;
 					controller.NavigationController.PushViewController (petMenu, true);
 				} else if (indexPath.Row == 1) { //"VETS"
 					// Launches a new instance of VetMenuController
 					VetMenuController vetMenu = controller.Storyboard.InstantiateViewController("VetMenu") as VetMenuController;
+					vetMenu.vets = controller.vets;
 					controller.NavigationController.PushViewController (vetMenu, true);
 				} else if (indexPath.Row == 2) { //"CALENDAR"
 

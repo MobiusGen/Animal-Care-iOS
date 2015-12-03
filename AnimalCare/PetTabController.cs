@@ -7,7 +7,7 @@ namespace AnimalCare
 {
 	partial class PetTabController : UITabBarController
 	{
-		public string name { get; set; }
+		public Pet pet { get; set; }
 
 		public PetTabController (IntPtr handle) : base (handle)
 		{
@@ -15,6 +15,7 @@ namespace AnimalCare
 
 		public override void ViewDidLoad () {
 			base.ViewDidLoad ();
+			this.NavigationItem.Title = pet.name;
 		}
 	}
 }

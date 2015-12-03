@@ -8,6 +8,7 @@ namespace AnimalCare
 	partial class VetMenuController : UITableViewController
 	{
 		protected string cellIdentifier = "VetMenuCell";
+		public Vet_Database vets;
 
 		public VetMenuController (IntPtr handle) : base (handle)
 		{
@@ -15,17 +16,19 @@ namespace AnimalCare
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
-			string[] vetMenu = new string[] { "Dr. Strangelove", "Dr. Bob" };
+			string[] vetMenu = vets.getNames ();
 			this.TableView.RegisterClassForCellReuse (typeof(UITableViewCell), cellIdentifier);
-			this.TableView.Source = new VetMenuTableSource (vetMenu, cellIdentifier);
+			this.TableView.Source = new VetMenuTableSource (this, vetMenu, cellIdentifier);
 		}// ViewDidLoad
 
 		public class VetMenuTableSource : UITableViewSource {
-			protected string[] menuItems;
+			private string[] menuItems;
 			protected string cellID;
+			private VetMenuController controller;
 
-			public VetMenuTableSource (string[] items, string cellID) {
+			public VetMenuTableSource (VetMenuController controller, string[] items, string cellID) {
 				menuItems = items;
+				this.controller = controller;
 				this.cellID = cellID;
 			}// VetMenuTableSource constructor
 
@@ -44,6 +47,15 @@ namespace AnimalCare
 				cell.TextLabel.Text = menuItems[indexPath.Row];
 				return cell;
 			}// GetCell
+
+			public override void RowSelected (UITableView tableView, NSIndexPath indexPath) {
+				controller.TableView.DeselectRow (indexPath, true);
+				VetViewController vetController = controller.Storyboard.InstantiateViewController ("VetProfile") as VetViewController;
+				string name = GetCell (tableView, indexPath).TextLabel.Text;
+				Vet newVet = controller.vets.GetVet (name);
+				vetController.vet = newVet;
+				controller.NavigationController.PushViewController (vetController, true);
+			}
 
 		}// class VetMenuTableSource
 

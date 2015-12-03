@@ -8,22 +8,20 @@ namespace AnimalCare
 	partial class PetMenuController : UITableViewController
 	{
 		protected string cellIdentifier = "PetMenuCell";
-		public Pet[] pets;
+		public Pets_Database pets { get; set; }
+		public Vet_Database vets { get; set; }
 
 		public PetMenuController (IntPtr handle) : base (handle) {
-			pets = new Pet[0];
+			pets = new Pets_Database ();
 		}// PetMenuController constructor
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
 			string[] petMenu;	
-			if (pets.Length == 0) {
+			if (pets.getCount () == 0) {
 				petMenu = new string[0];
 			} else {
-				petMenu = new string[pets.Length];
-				for (int i = 0; i < pets.Length; i++) {
-					petMenu [i] = pets [i].name;
-				}
+				petMenu = pets.getNames ();
 			}
 			this.TableView.Source = new PetMenuTableSource (this, petMenu, cellIdentifier);
 		}// ViewDidLoad
@@ -58,8 +56,11 @@ namespace AnimalCare
 			public override void RowSelected (UITableView tableView, NSIndexPath indexPath) {
 				string name = GetCell (tableView, indexPath).TextLabel.Text;
 				PetTabController petController = controller.Storyboard.InstantiateViewController ("PetMainPage") as PetTabController;
-				petController.name = name;
+				Pet viewPet = controller.pets.GetPet (name);
+				petController.pet = viewPet;
 				controller.NavigationController.PushViewController (petController, true);
+
+
 			}// RowSelected
 
 		}// class PetMenuTableSource
