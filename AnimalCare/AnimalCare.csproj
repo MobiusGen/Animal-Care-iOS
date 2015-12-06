@@ -74,6 +74,19 @@
     <ImageAsset Include="Resources\Images.xcassets\Placeholder.imageset\default-placeholder.png" />
     <ImageAsset Include="Resources\Images.xcassets\mrCuddles.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\mrCuddles.imageset\mrCuddles.jpg" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon180.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon120.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon114.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon57.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon120_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon80.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon87.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon58.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\icon29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\loadingpage.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\loadingpage640_960.png" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\loadingpage640_960 copy.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -121,6 +134,18 @@
       <DependentUpon>VetViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Pets_Database.cs" />
+    <Compile Include="PetMedicinePage.cs" />
+    <Compile Include="PetMedicinePage.designer.cs">
+      <DependentUpon>PetMedicinePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMedicineController.cs" />
+    <Compile Include="NewMedicineController.designer.cs">
+      <DependentUpon>NewMedicineController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineDetailController.cs" />
+    <Compile Include="MedicineDetailController.designer.cs">
+      <DependentUpon>MedicineDetailController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

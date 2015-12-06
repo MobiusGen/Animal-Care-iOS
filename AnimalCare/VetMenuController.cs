@@ -16,10 +16,17 @@ namespace AnimalCare
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
+			UIBarButtonItem newVet = new UIBarButtonItem (UIBarButtonSystemItem.Add, createNewVet);
+			this.NavigationItem.Title = "Vets";
+			this.NavigationItem.RightBarButtonItem = newVet;
 			string[] vetMenu = vets.getNames ();
 			this.TableView.RegisterClassForCellReuse (typeof(UITableViewCell), cellIdentifier);
 			this.TableView.Source = new VetMenuTableSource (this, vetMenu, cellIdentifier);
 		}// ViewDidLoad
+
+		public void createNewVet (Object sender, EventArgs e) {
+			
+		}
 
 		public class VetMenuTableSource : UITableViewSource {
 			private string[] menuItems;

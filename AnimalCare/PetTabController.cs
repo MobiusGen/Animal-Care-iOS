@@ -8,6 +8,7 @@ namespace AnimalCare
 	partial class PetTabController : UITabBarController
 	{
 		public Pet pet { get; set; }
+		public Vet_Database vets { get; set; }
 
 		public PetTabController (IntPtr handle) : base (handle)
 		{

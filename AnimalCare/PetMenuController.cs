@@ -17,14 +17,22 @@ namespace AnimalCare
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
+			UIBarButtonItem newPet = new UIBarButtonItem (UIBarButtonSystemItem.Add, createNewPet);
+			this.NavigationItem.RightBarButtonItem = newPet;
+			this.NavigationItem.Title = "Pets";
 			string[] petMenu;	
 			if (pets.getCount () == 0) {
 				petMenu = new string[0];
 			} else {
 				petMenu = pets.getNames ();
 			}
+			TableView.RegisterClassForCellReuse (typeof(UITableViewCell), cellIdentifier);
 			this.TableView.Source = new PetMenuTableSource (this, petMenu, cellIdentifier);
 		}// ViewDidLoad
+
+		public void createNewPet(Object sender, EventArgs e) {
+			
+		}
 
 		public class PetMenuTableSource : UITableViewSource {
 			private PetMenuController controller;
@@ -58,9 +66,8 @@ namespace AnimalCare
 				PetTabController petController = controller.Storyboard.InstantiateViewController ("PetMainPage") as PetTabController;
 				Pet viewPet = controller.pets.GetPet (name);
 				petController.pet = viewPet;
+				petController.vets = controller.vets;
 				controller.NavigationController.PushViewController (petController, true);
-
-
 			}// RowSelected
 
 		}// class PetMenuTableSource

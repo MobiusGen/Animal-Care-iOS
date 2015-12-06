@@ -20,13 +20,15 @@ namespace AnimalCare {
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
+			this.NavigationItem.Title = "Pet Companion";
 			menuOptions = new string[]{ "Pets", "Vets", "Calendar", "Gallery", "Settings" };
 			pets = new Pets_Database ();
 			pets.addNewPet (new Pet ("Mr. Cuddles", profilePicture: UIImage.FromBundle ("mrCuddles"), breed: "Bulldog",
 				birthday: NSDate.FromTimeIntervalSinceNow (-162795200), weight: 25, bodyColor: "Brown",
 				eyeColor: "Black", height: 60, length: 85, idBrand: "Dog Tagz inc", idNumber: "12345",
 				notes: "Pretty cool I guess.", allergies: new string[] { "Peanut butter", "Dogs", "Cats", "Humans" },
-				medicalConditions: new string[] { "Acute adorableness" }, vetNames: new string[] { "Dr. Strangelove" }));
+				medicalConditions: new string[] { "Acute adorableness" }, vetNames: new string[] { "Dr. Strangelove" },
+				medications: new Medication[] {new Medication("Drug"), new Medication("Super Drug")}));
 			pets.addNewPet (new Pet ("Spot"));
 			pets.addNewPet (new Pet ("Fluffy"));
 			vets = new Vet_Database ();

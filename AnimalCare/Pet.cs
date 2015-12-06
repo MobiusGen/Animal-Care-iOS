@@ -4,12 +4,6 @@ using Foundation;
 
 namespace AnimalCare {
 	public class Pet {
-		public struct Medication {
-			private string medName { get; set; }
-			private string medType {get; set; }
-			private int freqNum { get; set; }
-			private string freqPeriod {get; set; }
-		}
 
 		public string name { get; set; }
 		public UIImage profilePicture { get; set; }
@@ -42,8 +36,8 @@ namespace AnimalCare {
 			NSDate birthday = null, double weight = -1, string bodyColor = "", string eyeColor = "",
 			double height = -1.0, double length = -1.0, string[] identifyingMarks = null,
 			string idBrand = "", string idNumber = "", string notes = "",
-			string[] allergies = null, string[] medicalConditions = null, string medicalOtherInfo = null,
-			string[] vetNames = null, Medication[] medications = null) {
+			string[] allergies = null, string[] medicalConditions = null, string medicalOtherInfo = "",
+			string[] vetNames = null, Medication[] medications = null ) {
 
 			this.name = name;
 			this.profilePicture = profilePicture;
@@ -54,15 +48,15 @@ namespace AnimalCare {
 			this.eyeColor = eyeColor;
 			this.height = height;
 			this.length = length;
-			this.identifyingMarks = identifyingMarks;
+			this.identifyingMarks = identifyingMarks ?? new string[0];
 			this.idBrand = idBrand;
 			this.idNumber = idNumber;
 			this.notes = notes;
-			this.allergies = allergies;
-			this.medicalConditions = medicalConditions;
+			this.allergies = allergies ?? new string[0];
+			this.medicalConditions = medicalConditions ?? new string[0];
 			this.medicalOtherInfo = medicalOtherInfo;
-			this.vetNames = vetNames;
-			this.medications = medications;
+			this.vetNames = vetNames ?? new string[0];
+			this.medications = (medications ?? new Medication[0]);
 		}// Pet constructor
 
 		public override bool Equals (object obj) {
@@ -72,16 +66,41 @@ namespace AnimalCare {
 
 		public override int GetHashCode() {
 			return this.name.GetHashCode ();
-		}
+		}// GetHashCode
 
 	}// Pet class
 
-	public class Medication {
+	public struct Medication {
+		public enum MedicationTypes { Pill, Liquid, Shot, Drops, Gel, Other };
+		public enum MedicationFrequency { Daily, Weekly, Monthly, Yearly };
 
-		public Medication () {
-			
+		public static Medication NULL_MEDICATION = new Medication ("");
+
+		public string name { get; set; }
+		public MedicationTypes medType { get; set; }
+		public int frequencyNumber { get; set; }
+		public MedicationFrequency frequencyPeriod { get; set; }
+		public string pharmacyAddress { get; set; }
+
+		public Medication (string name, MedicationTypes medType = MedicationTypes.Pill, int frequency = 1,
+			MedicationFrequency frequencyPeriod = MedicationFrequency.Daily, string pharmacyAddress = "") {
+			this.name = name;
+			this.medType = medType;
+			this.frequencyNumber = frequency;
+			this.frequencyPeriod = frequencyPeriod;
+			this.pharmacyAddress = pharmacyAddress;
 		}// Medication constructor
+
+		public int getPharmacyAddressLines() {
+			int index = 0;
+			int count = 0;
+			while (index != -1) {
+				index = pharmacyAddress.IndexOf ('\n');
+				count++;
+			}
+			return count;
+		}// getPharmacyAddressLines
 		
-	}// Medication class
+	}// Medication struct
 }// AnimalCare namespace
 

@@ -19,6 +19,7 @@ namespace AnimalCare {
 			if (pets.Contains (newPet))
 				return false;
 			pets.Add (newPet);
+			return true;
 		}// addNewPet
 
 		/// <summary>

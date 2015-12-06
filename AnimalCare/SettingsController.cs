@@ -7,13 +7,14 @@ namespace AnimalCare
 {
 	partial class SettingsController : UITableViewController
 	{
-		protected string cellIdentifier = "SettingsCell";
+		private const string cellIdentifier = "SettingsCell";
 
 		public SettingsController (IntPtr handle) : base (handle) {
 		}// SettingsController constructor
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad ();
+			this.TableView.RegisterClassForCellReuse (typeof(UITableViewCell), cellIdentifier);
 			this.TableView.Source = new SettingsTableSource (this, cellIdentifier);
 		}// ViewDidLoad
 

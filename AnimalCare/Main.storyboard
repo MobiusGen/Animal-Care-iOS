@@ -190,9 +190,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="561" kind="relationship" relationship="viewControllers" id="560"/>
-                        <segue destination="563" kind="relationship" relationship="viewControllers" id="562"/>
-                        <segue destination="587" kind="relationship" relationship="viewControllers" id="611"/>
-                        <segue destination="580" kind="relationship" relationship="viewControllers" id="679"/>
+                        <segue destination="729" kind="relationship" relationship="viewControllers" id="1884"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="565" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,41 +213,41 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="S6D-7e-RKY">
-                                        <rect key="frame" x="8" y="0.0" width="584" height="523.5"/>
+                                        <rect key="frame" x="8" y="0.0" width="584" height="546.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m5D-Ac-8gg" fixedFrame="YES">
-                                                <rect key="frame" x="0.0" y="0.0" width="584" height="191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="584" height="214"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EBF-P1-sOt" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="214"/>
                                                         <animations/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lWL-cy-kSv" fixedFrame="YES">
-                                                        <rect key="frame" x="296" y="0.0" width="288" height="191"/>
+                                                        <rect key="frame" x="296" y="0.0" width="288" height="214"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMo-9g-BfJ" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="42"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="47.5"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ooh-W2-x43" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="50" width="288" height="41.5"/>
+                                                                <rect key="frame" x="0.0" y="55.5" width="288" height="47.5"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8z-Fl-GaW" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="99.5" width="288" height="42"/>
+                                                                <rect key="frame" x="0.0" y="111" width="288" height="47.5"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhc-Mh-HI4" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="149.5" width="288" height="41.5"/>
+                                                                <rect key="frame" x="0.0" y="166.5" width="288" height="47.5"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,7 +260,7 @@
                                                 <animations/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hWe-2Q-xdJ" fixedFrame="YES">
-                                                <rect key="frame" x="0.0" y="207" width="584" height="68"/>
+                                                <rect key="frame" x="0.0" y="230" width="584" height="68"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFI-ws-FUw" fixedFrame="YES">
                                                         <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
@@ -278,7 +276,7 @@
                                                 <animations/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TYR-cu-Vg9" fixedFrame="YES">
-                                                <rect key="frame" x="0.0" y="291" width="584" height="232.5"/>
+                                                <rect key="frame" x="0.0" y="314" width="584" height="232.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKn-TZ-ti8" fixedFrame="YES">
                                                         <rect key="frame" x="0.0" y="0.0" width="584" height="20.5"/>
@@ -388,69 +386,6 @@
             </objects>
             <point key="canvasLocation" x="3207" y="-273"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="570">
-            <objects>
-                <viewController id="563" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="556"/>
-                        <viewControllerLayoutGuide type="bottom" id="557"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="571">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="572"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="573" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3204" y="395"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="579">
-            <objects>
-                <viewController id="580" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="577"/>
-                        <viewControllerLayoutGuide type="bottom" id="578"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="581">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="678"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="582" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3903" y="389"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="586">
-            <objects>
-                <viewController id="587" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="584"/>
-                        <viewControllerLayoutGuide type="bottom" id="585"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="588">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="610"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="589" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3905" y="-272"/>
-        </scene>
         <!--Vet View Controller-->
         <scene sceneID="694">
             <objects>
@@ -463,7 +398,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qpu-hM-CTM" misplaced="YES">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qpu-hM-CTM">
                                 <rect key="frame" x="20" y="28" width="133" height="106"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVD-cO-NUG" fixedFrame="YES">
@@ -471,7 +406,7 @@
                                         <animations/>
                                         <state key="normal" title="Call Office"/>
                                         <connections>
-                                            <action selector="CallOfficeButtonPressed:" destination="695" id="711" eventType="touchUpInside"/>
+                                            <action selector="CallOfficeButtonPressed:" destination="695" eventType="touchUpInside" id="711"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf3-2n-x5w" fixedFrame="YES">
@@ -479,7 +414,7 @@
                                         <animations/>
                                         <state key="normal" title="Call Cell"/>
                                         <connections>
-                                            <action selector="CallCellButtonPressed:" destination="695" id="712" eventType="touchUpInside"/>
+                                            <action selector="CallCellButtonPressed:" destination="695" eventType="touchUpInside" id="712"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b84-ft-EqB" fixedFrame="YES">
@@ -487,7 +422,7 @@
                                         <animations/>
                                         <state key="normal" title="Directions to Office"/>
                                         <connections>
-                                            <action selector="DirectionsToOfficeButtonPressed:" destination="695" id="713" eventType="touchUpInside"/>
+                                            <action selector="DirectionsToOfficeButtonPressed:" destination="695" eventType="touchUpInside" id="713"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -537,6 +472,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="697" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="895"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="728">
+            <objects>
+                <tableViewController id="729" customClass="PetMedicinePage" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="730">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicineCell" rowHeight="44" id="733">
+                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="733" id="734">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="1441" kind="show" identifier="ShowDetailSegue" id="2217"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="729" id="731"/>
+                            <outlet property="delegate" destination="729" id="732"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="756"/>
+                    <navigationItem key="navigationItem" title="Title" id="853"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="735" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3206" y="413"/>
+        </scene>
+        <!--New Medicine Controller-->
+        <scene sceneID="771">
+            <objects>
+                <viewController storyboardIdentifier="NewMedicine" id="772" customClass="NewMedicineController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="769"/>
+                        <viewControllerLayoutGuide type="bottom" id="770"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="773">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="774" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807" y="1143"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="1440">
+            <objects>
+                <tableViewController storyboardIdentifier="MedicineDetail" modalPresentationStyle="overFullScreen" id="1441" customClass="MedicineDetailController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1442">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="1441" id="1443"/>
+                            <outlet property="delegate" destination="1441" id="1444"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1447" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3559" y="1146"/>
         </scene>
     </scenes>
     <resources>
