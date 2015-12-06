@@ -15,12 +15,17 @@ namespace AnimalCare
 
 		public override void ViewDidLoad () {
 			base.ViewDidLoad ();
+			UIBarButtonItem editButton = new UIBarButtonItem (UIBarButtonSystemItem.Add, editVet);
 			this.NavigationItem.Title = vet.name;
 			this.notesTextView.Text = vet.notes;
 			this.callOfficeButton.Enabled = vet.hasOfficePhone;
 			this.callCellButton.Enabled = vet.hasCellPhone;
 			this.directionsButton.Enabled = vet.hasAddress;
 		}// ViewDidLoad
+
+		public void editVet (Object sender, EventArgs e) {
+			
+		}
 
 		partial void CallOfficeButtonPressed (UIButton sender) {
 			var url = new NSUrl("tel:" + vet.fullOfficePhone);

@@ -28,13 +28,17 @@ namespace AnimalCare
 
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender) {
 			base.PrepareForSegue (segue, sender);
-			var medDetail = segue.DestinationViewController as MedicineDetailController;
-			int row = TableView.IndexPathForSelectedRow.Row;
-			medDetail.medication = parentController.pet.medications [row];
+			if (segue.Identifier.Equals ("ShowDetailSegue")) {
+				var medDetail = segue.DestinationViewController as MedicineDetailController;
+				int row = TableView.IndexPathForSelectedRow.Row;
+				medDetail.medication = parentController.pet.medications [row];
+			}
 		}
 
 		public void addNewMedication(object sender, EventArgs e) {
-			Console.WriteLine ("Add new medication");
+			var newMedController = Storyboard.InstantiateViewController ("NewMedicine") as NewMedicineController;
+			newMedController.petController = parentController;
+			NavigationController.PushViewController (newMedController, true);
 		}
 
 		public class MedicineTableDataSource : UITableViewSource {

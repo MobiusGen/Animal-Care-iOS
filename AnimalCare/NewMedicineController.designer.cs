@@ -14,8 +14,24 @@ namespace AnimalCare
 	[Register ("NewMedicineController")]
 	partial class NewMedicineController
 	{
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIScrollView scrollView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIStackView stackView { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
+			if (scrollView != null) {
+				scrollView.Dispose ();
+				scrollView = null;
+			}
+			if (stackView != null) {
+				stackView.Dispose ();
+				stackView = null;
+			}
 		}
 	}
 }

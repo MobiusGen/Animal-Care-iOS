@@ -89,7 +89,6 @@
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\loadingpage640_960 copy.png" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>

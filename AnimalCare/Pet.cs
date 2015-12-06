@@ -75,6 +75,11 @@ namespace AnimalCare {
 		public enum MedicationFrequency { Daily, Weekly, Monthly, Yearly };
 
 		public static Medication NULL_MEDICATION = new Medication ("");
+		public static MedicationTypes[] ALL_MED_TYPES = new MedicationTypes[] {
+			MedicationTypes.Pill, MedicationTypes.Liquid, MedicationTypes.Shot,
+			MedicationTypes.Drops, MedicationTypes.Gel, MedicationTypes.Other};
+		public static MedicationFrequency[] ALL_MED_FREQUENCIES = new MedicationFrequency[] {
+			MedicationFrequency.Daily, MedicationFrequency.Weekly, MedicationFrequency.Monthly, MedicationFrequency.Yearly};
 
 		public string name { get; set; }
 		public MedicationTypes medType { get; set; }

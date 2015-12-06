@@ -25,11 +25,6 @@ namespace AnimalCare
 			TableView.Source = new MedicineDetailTableSource (this, cellIdentifier);
 		}
 
-//		public void BackToMeds (Object sender, EventArgs e) {
-//			this.DismissViewController (true, null);
-//			
-//		}
-
 		public void EditMedication (Object sender, EventArgs e) {
 			
 		}
