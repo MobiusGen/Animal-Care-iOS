@@ -16,7 +16,7 @@ namespace AnimalCare
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIScrollView scrollView { get; set; }
+		UIScrollView ScrollView { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -24,9 +24,9 @@ namespace AnimalCare
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (scrollView != null) {
-				scrollView.Dispose ();
-				scrollView = null;
+			if (ScrollView != null) {
+				ScrollView.Dispose ();
+				ScrollView = null;
 			}
 			if (stackView != null) {
 				stackView.Dispose ();
