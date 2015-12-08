@@ -71,8 +71,8 @@ namespace AnimalCare {
 	}// Pet class
 
 	public struct Medication {
-		public enum MedicationTypes { Pill, Liquid, Shot, Drops, Gel, Other };
-		public enum MedicationFrequency { Daily, Weekly, Monthly, Yearly };
+		public enum MedicationTypes { Pill = 0, Liquid, Shot, Drops, Gel, Other };
+		public enum MedicationFrequency { Daily = 0, Weekly, Monthly, Yearly };
 
 		public static Medication NULL_MEDICATION = new Medication ("");
 		public static MedicationTypes[] ALL_MED_TYPES = new MedicationTypes[] {

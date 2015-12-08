@@ -46,10 +46,12 @@ namespace AnimalCare
 				UITableViewCell cell = tableView.DequeueReusableCell (cellID) ?? new UITableViewCell (UITableViewCellStyle.Default, cellID);
 				cell.TextLabel.Text = "";
 				cell.AccessoryView = null;
+				Medication med = controller.medication;
 				switch (indexPath.Section) {
 				case 0:
 					if (indexPath.Row == 0) {
-						cell.TextLabel.Text = "Take 1 pill daily at 9 AM";
+						cell.TextLabel.Text = "Take " + med.frequencyNumber + " " + 
+							med.medType + " " + med.frequencyPeriod + " at 9:00 AM";
 					} else {
 						cell.TextLabel.Text = "Notify me";
 						cell.AccessoryView = new UISwitch ();
@@ -65,8 +67,8 @@ namespace AnimalCare
 					break;
 				case 2:
 					if (indexPath.Row == 0) {
-						cell.TextLabel.Text = "Doggy Pharma\n1234 Woof Ave.\nArlington, TX 12345";
-						cell.TextLabel.Lines = controller.medication.getPharmacyAddressLines ();
+						cell.TextLabel.Text = med.pharmacyAddress;
+						cell.TextLabel.Lines = 4;//controller.medication.getPharmacyAddressLines ();
 					} else {
 						cell.TextLabel.Text = "Get Directions";
 					}
@@ -77,12 +79,26 @@ namespace AnimalCare
 				return cell;
 			}// GetCell
 
+			public override nfloat GetHeightForRow (UITableView tableView, NSIndexPath indexPath) {
+				if (indexPath.Section == 2 && indexPath.Row == 0) {
+					UILabel testLabel = new UILabel ();
+					testLabel.Text = "Doggy Pharma\n1234 Woof Ave.\nArlington, TX 12345";
+					testLabel.Lines = 4;//controller.medication.getPharmacyAddressLines ();
+					if (testLabel.IntrinsicContentSize.Height > tableView.RowHeight)
+						return testLabel.IntrinsicContentSize.Height;
+				}
+				return tableView.RowHeight;
+			}// GetHeightForRow
+
 			public override nint NumberOfSections (UITableView tableView) {
 				return 3;
 			}// NumberOfSections
 
 			public override void RowSelected (UITableView tableView, NSIndexPath indexPath) {
-				
+				if (indexPath.Section == 2 && indexPath.Row == 1) {
+					var url = new NSUrl("http://maps.apple.com/?daddr=" + "Doggy+Pharma+1234+Woof+Ave.+Arlington,+TX+12345" + "&dirflg=d");
+					UIApplication.SharedApplication.OpenUrl(url);
+				}
 			}
 
 			public override nint RowsInSection (UITableView tableview, nint section) {

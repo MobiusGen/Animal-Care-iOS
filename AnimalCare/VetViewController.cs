@@ -17,6 +17,7 @@ namespace AnimalCare
 			base.ViewDidLoad ();
 			UIBarButtonItem editButton = new UIBarButtonItem (UIBarButtonSystemItem.Add, editVet);
 			this.NavigationItem.Title = vet.name;
+			this.NavigationItem.SetRightBarButtonItem (editButton, true);
 			this.notesTextView.Text = vet.notes;
 			this.callOfficeButton.Enabled = vet.hasOfficePhone;
 			this.callCellButton.Enabled = vet.hasCellPhone;

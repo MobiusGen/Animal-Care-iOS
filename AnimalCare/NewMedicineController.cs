@@ -2,6 +2,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 using UIKit;
+using System.Collections.Generic;
 
 namespace AnimalCare
 {
@@ -80,7 +81,7 @@ namespace AnimalCare
 			//scrollView.KeyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag;
 			//scrollView.ScrollEnabled = true;
 			// Set up Navigation Bar
-			var saveButton = new UIBarButtonItem (UIBarButtonSystemItem.Save);
+			var saveButton = new UIBarButtonItem (UIBarButtonSystemItem.Save, save);
 			var cancelButton = new UIBarButtonItem (UIBarButtonSystemItem.Cancel, cancel);
 			NavigationItem.Title = "New Medication:";
 			NavigationItem.RightBarButtonItem = saveButton;
@@ -277,7 +278,15 @@ namespace AnimalCare
 		}// ViewDidLoad
 
 		public void save (Object sender, EventArgs e) {
-			
+			Medication newMew = new Medication (nameField.Text,
+				medType: (Medication.MedicationTypes)(int)(medTypePicker.SelectedRowInComponent (0)),
+				frequency: (int)freqStepper.Value,
+				frequencyPeriod: (Medication.MedicationFrequency)(int)(freqPicker.SelectedRowInComponent (0)),
+				pharmacyAddress: pharmacyTextField.Text);
+			List<Medication> medList = new List<Medication> (petController.pet.medications);
+			medList.Add (newMew);
+			petController.pet.medications = medList.ToArray ();
+			NavigationController.PopViewController (true);
 		}// save
 
 		public void cancel (Object sender, EventArgs e) {

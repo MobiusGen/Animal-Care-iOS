@@ -145,6 +145,22 @@
     <Compile Include="MedicineDetailController.designer.cs">
       <DependentUpon>MedicineDetailController.cs</DependentUpon>
     </Compile>
+    <Compile Include="GalleryController.cs" />
+    <Compile Include="GalleryController.designer.cs">
+      <DependentUpon>GalleryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Photo_Database.cs" />
+    <Compile Include="photoDetailController.cs" />
+    <Compile Include="photoDetailController.designer.cs">
+      <DependentUpon>photoDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalInfoController.cs" />
+    <Compile Include="MedicalInfoController.designer.cs">
+      <DependentUpon>MedicalInfoController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar" />
+  </ItemGroup>
 </Project>

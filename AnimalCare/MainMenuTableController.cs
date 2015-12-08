@@ -86,7 +86,9 @@ namespace AnimalCare {
 				} else if (indexPath.Row == 2) { //"CALENDAR"
 
 				} else if (indexPath.Row == 3) { //"GALLERY"
-
+					GalleryController gallery = controller.Storyboard.InstantiateViewController ("gallery") as GalleryController;
+					gallery.pets = controller.pets;
+					controller.NavigationController.PushViewController (gallery, true);
 				} else if (indexPath.Row == 4) { //"SETTINGS"
 					SettingsController settingsMenu = controller.Storyboard.InstantiateViewController("SettingsController") as SettingsController;
 					controller.NavigationController.PushViewController (settingsMenu, true);

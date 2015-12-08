@@ -120,11 +120,11 @@ namespace AnimalCare
 			public override string TitleForHeader (UITableView tableView, nint section) {
 				switch (section) {
 				case 0:
-					return "Section 1";
+					return "Reminders";
 				case 1:
 					return "Prescription Refills";
 				default:
-					return "Section 3";
+					return "Measurements";
 				}//switch
 			}// TitleForHeader
 
